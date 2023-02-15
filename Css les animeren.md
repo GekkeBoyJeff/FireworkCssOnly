@@ -140,4 +140,4 @@ body:hover div{
 }
 ```
 Wat hier gebeurt is dat er twee geneste divs zijn. De moederdiv is groen en gaat omhoog. Nadat deze omhoog gaat voeren de twee kinderen (ook divs) de keyframe links en rechts uit. Dus één van de kinderen gaat naar links en de ander gaat naar rechts. 
-![de vierkant gaat omhoog en verspreid zich in 3 delen](./Excalidraw/example.svg)
+![de vierkant gaat omhoog en verspreid zich in 3 delen](./Excalidraw/Example.svg)
