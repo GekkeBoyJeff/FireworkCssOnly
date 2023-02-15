@@ -1,4 +1,3 @@
-
 Animatie maken doe je door middel van een @keyframe
 
 Snap svg path: https://mavo.io/demos/svgpath/
@@ -140,4 +139,4 @@ body:hover div{
 }
 ```
 Wat hier gebeurt is dat er twee geneste divs zijn. De moederdiv is groen en gaat omhoog. Nadat deze omhoog gaat voeren de twee kinderen (ook divs) de keyframe links en rechts uit. Dus één van de kinderen gaat naar links en de ander gaat naar rechts. 
-![[Drawing 2023-02-15 13.40.03.excalidraw.svg]]
+![[./Excalidraw/Example.svg]]
