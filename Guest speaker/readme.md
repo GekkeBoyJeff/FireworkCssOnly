@@ -28,7 +28,7 @@ And are implementing the stuff we built by hand.
 
 <!-- of gebruik een for attribuut op de label. -->
 ```
-![[Pasted image 20230216122256.png]]
+![](./images/Pasted%20image%2020230216122256.png)
 
 ### Input elementen kan je stylen.
 ```CSS
@@ -68,7 +68,7 @@ input:checked::before{
     <option>Bootstrap3></option>
 </datalist>
 ```
-![[Pasted image 20230216122653.png]]
+![](./images/Pasted%20image%2020230216122653.png)
 
 ### input elementen hebben een browser pre-configured dark mode dit kan je aanzetten met:
 ```CSS
@@ -123,7 +123,7 @@ Dit kan je doen met scroll snapping. Scroll-snap verteld de browser waar de scro
     scroll-snap-align: center;
 }
 ```
-![[Pasted image 20230216123137.png]]
+![](./images/Pasted%20image%2020230216123137.png)
 Scroll-snap-align is een **logical property**
 
 Extra demo: youtu.be/34zcWFLCDlc
@@ -137,7 +137,7 @@ Extra demo: youtu.be/34zcWFLCDlc
     grid-template-rows: masonry;
 }
 ```
-![[Pasted image 20230216123236.png]]
+![](./images/Pasted%20image%2020230216123236.png)
 
 ### Select menu
 Je kan niets doen om de select te stijlen.
@@ -173,7 +173,7 @@ https://polypane.app/where-is-has
 ### Scroll linked animation
 Een keyframe koppelen aan je scroll positie van ieder scrollbaar element.
 Het is te koppelen met scroll-snap-type. Echter is het nog niet uit.
-![[Pasted image 20230216124011.png]]
+![](./images/Pasted%20image%2020230216124011.png)
 
 ### Lazyloading
 ```HTML
@@ -214,7 +214,7 @@ summary:hover{
 
 ### Dialog element (niet geheel zonder js)
 Dialog zit in de top-layer van je pagina. Het lijkt enorm op de error popup van javascript maar deze werkt zonder javascript en blokkeert niet je hele pagina. Ook heeft de dialog altijd een top-level z-index en beschikt Dialog ook over een backdrop. Meer hierover lees je hieronder.
-![[Pasted image 20230216124312.png]]
+![](./images/Pasted%20image%2020230216124312.png)
 ```HTML
 <dialog>
     <form method="dialog">
