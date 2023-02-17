@@ -476,8 +476,8 @@ Form items ^e6S2suXZ
 		},
 		{
 			"type": "text",
-			"version": 456,
-			"versionNonce": 587421663,
+			"version": 460,
+			"versionNonce": 1158257991,
 			"isDeleted": false,
 			"id": "UkGakRYT",
 			"fillStyle": "solid",
@@ -496,7 +496,7 @@ Form items ^e6S2suXZ
 			"groupIds": [],
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1676545952201,
+			"updated": 1676624663728,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -4850,10 +4850,10 @@ Form items ^e6S2suXZ
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 58.186521389734565,
-		"scrollY": -1808.8694621557838,
+		"scrollX": 558.538428606781,
+		"scrollY": 429.6961333252127,
 		"zoom": {
-			"value": 1.168780963386902
+			"value": 1.14949318216931
 		},
 		"currentItemRoundness": "sharp",
 		"gridSize": null,

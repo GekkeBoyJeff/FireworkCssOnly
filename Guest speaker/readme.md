@@ -52,7 +52,7 @@ input:focus-visible{
     /* voor als je gaat tabben. */
 }
 input::before{
-    // je styling
+    /** je styling */
 }
 input:checked::before{
     /** je styling als het gechecked is.  */
