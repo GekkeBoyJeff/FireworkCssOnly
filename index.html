@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Firework show</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -12,7 +12,9 @@
 <body>
     <form action="">
         <fieldset>
-            <!-- <legend>Firework show</legend> -->
+            <input type="checkbox" id="menuLinks">
+            <label for="menuLinks">Menu links</label>
+            <!-- Menu left button -->
             <input type="checkbox" id="animation1">
             <label for="animation1">Animation 1</label>
             <input type="checkbox" id="animation2">
@@ -30,28 +32,25 @@
             <input type="checkbox" id="animation8">
             <label for="animation8">Animation 8</label>
         </fieldset>
-        <input type="checkbox" id="menuLinks">
-        <label for="menuLinks">Menu links</label>
-        <input type="checkbox" id="menuOnder">
-        <label for="menuOnder">Menu onder</label>
+
         <fieldset> <!-- Linker menu -->
+            <input type="checkbox" id="menuOnder">
+            <label for="menuOnder">Menu onder</label>
             <!-- <legend>Menu links</legend> -->
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
-            <label><input type="text"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="text" maxlength="1"></label>
+            <label><input type="checkbox"></label>
         </fieldset>
         <fieldset> <!-- Onder menu -->
             <!-- <legend>Menu Onder</legend> -->
         </fieldset>
     </form>
-    <div class="container">
-        <div class="firework"></div>
-    </div>
 
 </body>
 
