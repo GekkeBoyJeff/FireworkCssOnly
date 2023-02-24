@@ -248,3 +248,138 @@ form:has(>fieldset:nth-of-type(2)>input:first-of-type:checked)>fieldset:nth-of-t
 }
 ```
 
+After adding the slider buttons I added functionality for the other animation buttons. 
+
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) {
+    background-color: brown;
+    transform: translateY(-100%);
+}
+
+form>fieldset:nth-of-type(n+4) {
+    position: absolute;
+    width: 100vw;
+    top: 100%;
+}
+```
+
+the first selector is for a fieldset once the checkbox has been checked. I repeated multiple times for each animation.
+
+### Animation
+So I started working on my first animation. I want them to play once the checkbox has been pressed in the left menu.
+
+A few days ago Sanne gave us a lesson about animation. I decided that I would use that animation for a base.
+The HTML consisted out of:
+
+```HTML
+<div>
+  <div></div>
+  <div></div>
+</div>
+```
+
+```CSS
+body{
+height:100vh;
+display:grid;
+place-content:center;
+}
+
+body div {
+  width:5em;
+  aspect-ratio:1;
+  background-color:green;
+  
+  animation-name:omhoog;
+  animation-duration:2s;
+  animation-fill-mode:forwards;
+  animation-play-state:paused;
+  position:relative;
+} 
+
+@keyframes omhoog{
+  0%{
+    transform:translateY(0);
+  }
+  50%, 100%{
+    transform:translateY(-200%);
+  }
+}
+
+div div  {
+  position:absolute;
+  inset:0;
+  background-color:red;
+}
+
+div div:nth-of-type(1){
+  animation-name:links;
+  animation-duration:1s;
+  animation-delay:1s;
+/*   animation-iteration-count:infinite; */
+  animation-play-state:paused;
+  animation-fill-mode:forwards;
+}
+
+div div:nth-of-type(2){
+  animation-name:rechts;
+  animation-duration:1s;
+  animation-delay:1s;
+/*   animation-iteration-count:infinite; */
+    animation-fill-mode:forwards;
+  animation-play-state:paused;
+}
+
+@keyframes links{
+0%{
+	transform:translateX(0%);
+}
+100%{
+	transform:translateX(-200%);
+  }
+}
+@keyframes rechts{
+0%{
+	transform:translateX(0%);
+}
+100%{
+transform:translateX(200%);
+  }
+}
+  
+body:hover div{
+  animation-play-state: running;
+}
+```
+
+The code above shows a single red block which splits into three blocks.
+![](./assets/w2SingleBlock.png) ![](../assets/w2TrippleBlock.png)
+
+So I tried to chain animations by placing a div around them which starts all the animations on hover. This however did not work fluently and felt wrong. After trying to make it work for a while a classmate told me I could simply place the other animation in the same css property and that I could add a delay for it aswell. 
+
+So all I had to do was add the new animation
+```CSS
+@keyframes dissapear{
+  0%{
+    opacity:1;
+  }100%{
+    opacity:0;
+  }
+}
+
+body div {
+  width:5em;
+  aspect-ratio:1;
+  background-color:green;
+  
+  animation-name:omhoog, dissapear;
+  animation-duration:2s, 1s;
+  animation-delay:0s, 1.5s;
+  animation-fill-mode:forwards;
+  animation-play-state:paused;
+  position:relative;
+} 
+```
+
+As shown above, the animation-name has 2 properties now. the same goes for duration and delay so each animation has its sperate duration and starts at a different time.
+

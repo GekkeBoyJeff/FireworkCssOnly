@@ -30,7 +30,7 @@ body>form:first-of-type fieldset:first-of-type {
     height: 100%;
     flex-wrap: wrap;
     width: 20em;
-    background-color: #1b1b1b;
+    background-color: black;
     gap: 1em;
     padding: 1em;
     align-content: start;
@@ -99,7 +99,7 @@ body>form:first-of-type fieldset:first-of-type label:first-of-type::before {
 body>form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type label:first-of-type::before {
     content: 'X';
     color: red;
-    background-color: #1b1b1b;
+    background-color: black;
     transform: translateX(3em);
     transition: .5s;
     width: 8em;
@@ -198,11 +198,51 @@ form:has(>fieldset:nth-of-type(2)>input:first-of-type:checked)>fieldset:nth-of-t
 form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3) {
     transform: translateY(-104%);
     background-color: yellow;
-    height: 100dvh;
 }
 
-body>form:first-of-type>label:last-of-type {
-    background-color: yellow;
+form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) {
+    background-color: brown;
+    transform: translateY(-100%);
+}
+
+form>fieldset:nth-of-type(n+3) {
+    opacity: .8;
+}
+
+form>fieldset:nth-of-type(n+4) {
+    position: absolute;
+    width: 100vw;
+    top: 100%;
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(4):checked)>fieldset:nth-of-type(5) {
+    background-color: greenyellow;
+    transform: translateY(-100%);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(5):checked)>fieldset:nth-of-type(6) {
+    background-color: aqua;
+    transform: translateY(-100%);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(6):checked)>fieldset:nth-of-type(7) {
+    background-color: azure;
+    transform: translateY(-100%);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(7):checked)>fieldset:nth-of-type(8) {
+    background-color: blue;
+    transform: translateY(-100%);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(8):checked)>fieldset:nth-of-type(9) {
+    background-color: blueviolet;
+    transform: translateY(-100%);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(9):checked)>fieldset:nth-of-type(10) {
+    background-color: burlywood;
+    transform: translateY(-100%);
 }
 
 form:has(> input:last-of-type:checked)>fieldset:nth-of-type(2) {
@@ -214,8 +254,11 @@ fieldset {
     transition: .5s;
     position: relative;
     height: 0;
+    height: 100dvh;
 }
 
 form>fieldset:nth-of-type(2) label:last-of-type {
     padding-right: 1em;
 }
+
+/* First animation */
