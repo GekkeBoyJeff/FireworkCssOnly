@@ -1,14 +1,34 @@
+:root{
+    
+    --background: #040327;
+--menuBackground: #1a191a;
+}
+
 * {
     margin: 0;
     padding: 0;
     border: none;
+    font-family: math;
 }
 
 body {
     height: 100dvh;
     display: flex;
     overflow: hidden;
-    background-color: #1b1b1b;
+    background-color: var(--background);
+}
+
+body:after{
+    content:'';
+    position: absolute;
+    top: -1em;
+    right: -4em;
+    background: #c9c9c9;
+    box-shadow: 0 0 2em #616161;
+    width: 12em;
+    aspect-ratio:1;
+    border-radius: 50%;
+    z-index: -1;
 }
 
 form {
@@ -30,7 +50,7 @@ body>form:first-of-type fieldset:first-of-type {
     height: 100%;
     flex-wrap: wrap;
     width: 20em;
-    background-color: black;
+    background-color: var(--menuBackground);
     gap: 1em;
     padding: 1em;
     align-content: start;
@@ -39,12 +59,33 @@ body>form:first-of-type fieldset:first-of-type {
 }
 
 body>form:first-of-type fieldset:first-of-type label {
-    background-color: red;
-    flex: 1 1 25%;
+    background-color: var(--background);
+    color: white;
+    flex: 1 1 22%;
     text-align: center;
-    padding: 2em;
+    padding: 2em 1em;
     align-self: center;
     border-radius: .4em;
+    transition: .5s;
+}
+
+body>form:first-of-type fieldset:first-of-type label:nth-of-type(n+2) {
+    filter: brightness(4.5);
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2) {
+    box-shadow: 0 0 0.5em 0 black inset;
+    background: hsl(198deg 67% 54%);
+}
+
+body>form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:first-of-type label:nth-of-type(2)::before {
+    content: '✅';
+}
+
+body>form:first-of-type fieldset:first-of-type label:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+    font-weight: 700;
 }
 
 /* Changes width of the content once the menu has been folded open */
@@ -59,7 +100,7 @@ form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:nth-of
 
 /* Menu on the left folded open */
 form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type {
-    transform: translateX(0px);
+    transform: translateX(0);
 }
 
 /* Left side button */
@@ -67,7 +108,7 @@ form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-
 form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type>label:first-of-type {
     pointer-events: none;
     height: 3.3em;
-    background-color: #1b1b1b;
+    background-color: var(--menuBackground);
     z-index: -1;
     width: 9em;
     left: 15em;
@@ -80,6 +121,8 @@ body>form:first-of-type fieldset:first-of-type label:first-of-type {
     top: -23.7em;
     padding: 0;
     flex: unset;
+    height: 3.3em;
+    border-radius: .2em;
     left: 18em;
     width: 11em;
     background-color: unset;
@@ -90,8 +133,8 @@ body>form:first-of-type fieldset:first-of-type label:first-of-type {
 /* Move the after 'button' to the top left and set the text to Firework */
 body>form:first-of-type fieldset:first-of-type label:first-of-type::before {
     content: 'Firework';
-    background-color: red;
-    color: #1b1b1b;
+    background-color: var(--menuBackground);
+    color: var(--background);
     font-family: system-ui;
     font-weight: 700;
     padding: 1em;
@@ -108,8 +151,8 @@ body>form:first-of-type fieldset:first-of-type label:first-of-type::before {
 /* Also changes the text to an X */
 body>form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type label:first-of-type::before {
     content: 'X';
-    color: red;
-    background-color: black;
+    color: var(--background);
+    background-color: var(--menuBackground);
     transform: translateX(3em);
     transition: .5s;
     width: 8em;
@@ -134,7 +177,7 @@ form>fieldset:nth-of-type(2) {
     gap: 1em;
     height: 5em;
     width: 100vw;
-    background: green;
+    background: var(--menuBackground);
     left: 0;
     z-index: 3;
     justify-content: end;
@@ -166,7 +209,7 @@ form>fieldset:nth-of-type(2)>label:first-of-type {
     position: relative;
     left: 2em;
     bottom: 4em;
-    background: red;
+    background: var(--menuBackground);
     border-radius: .5em .5em 0 0;
     text-align: center;
     display: flex;
@@ -179,15 +222,20 @@ form>fieldset:nth-of-type(2)>label:first-of-type {
     margin-right: auto;
 }
 
+form:has(>fieldset:nth-of-type(1)>input:first-of-type:checked)>fieldset:nth-of-type(2)>label:first-of-type {
+    border: .09em solid var(--background);
+}
+
 /* hide the menu down by default */
 form:has(>fieldset:nth-of-type(2)>input:first-of-type:checked)>fieldset:nth-of-type(2) {
     transform: translateY(0em);
+    box-shadow: 0 0 .5em var(--background);
 }
 
 /* Change text in the label by placing the after */
 form>fieldset:nth-of-type(2)>label:first-of-type::after {
     content: '^';
-    color: #1b1b1b;
+    color: var(--background);
     font-weight: bold;
     font-size: 3em;
     position: relative;
@@ -207,7 +255,6 @@ form:has(>fieldset:nth-of-type(2)>input:first-of-type:checked)>fieldset:nth-of-t
 /* flip first firework layer up */
 form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3) {
     transform: translateY(-100%);
-    background-color: yellow;
 }
 
 form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) {
@@ -271,4 +318,129 @@ form>fieldset:nth-of-type(2) label:last-of-type {
     padding-right: 1em;
 }
 
+
 /* First animation */
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::after,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::after,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::after {
+    content: '';
+    --colorDeg: 60deg;
+    --color: hsl(var(--colorDeg) 100% 50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+    background: radial-gradient(circle, var(--color) .2em, #0000 0) 50% 00%,
+        radial-gradient(circle, var(--color) .3em, #0000 0) 00% 25%,
+        radial-gradient(circle, var(--color) .5em, #0000 0) 15% 45%,
+        radial-gradient(circle, var(--color) .2em, #0000 0) 95% 45%,
+        radial-gradient(circle, var(--color) .3em, #0000 0) 5% 70%,
+        radial-gradient(circle, var(--color) .5em, #0000 0) 65% 85%,
+        radial-gradient(circle, var(--color) .2em, #0000 0) 25% 85%,
+        radial-gradient(circle, var(--color) .3em, #0000 0) 85% 65%,
+        radial-gradient(circle, var(--color) .5em, #0000 0) 75% 25%,
+        radial-gradient(circle, var(--color) .2em, #0000 0) 90% 15%;
+    background-size: 0.2em 0.2em;
+    background-repeat: no-repeat;
+    animation: firework 2s infinite;
+    border-radius: .5em;
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+    --colorDeg: 30deg;
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::after {
+    transform: translate(-50%, -50%) rotate(-27deg) !important;
+    --colorDeg: 10deg;
+}
+
+@keyframes firework {
+    0% {
+        transform: translateY(60vh);
+        opacity: 1;
+    }
+
+    50% {
+        width: 0.3em;
+        opacity: 1;
+    }
+
+    100% {
+        width: 50dvw;
+        opacity: 0;
+    }
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::after {
+    left: 20%;
+    bottom: 20%;
+    animation-delay: .5s;
+    --colorDeg: 80deg;
+    --color: hsl(var(
+    --colorDeg) 100% 50%);
+}
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::after {
+    left: 80%;
+    top: 40%;
+    animation-delay: 1.2s;
+    --colorDeg: 20deg;
+    --color: hsl(var(
+    --colorDeg) 100% 50%);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+@media (prefers-color-scheme: light) {
+    :root{
+        --background: #94e1ec;
+    }
+    body>form:first-of-type fieldset:first-of-type label:nth-of-type(n+2){
+        filter:unset;
+    --background: #3bc2d8;
+    }
+    form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2){
+        background:var(--background)
+    }
+    body::before{
+        color:black;
+        content:"it's a bit light in here, isn't it?, try the dark mode";
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        text-align: center;
+        top: 1em;
+    }
+    body:after{
+        content:'';
+        position: absolute;
+        top: -1em;
+        right: -4em;
+        background:yellow;
+        box-shadow: 0 0 2em yellow;
+        width: 12em;
+        aspect-ratio:1;
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body>form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type label:first-of-type::before, form>fieldset:nth-of-type(2)>label:first-of-type, body>form:first-of-type fieldset:first-of-type label:first-of-type::before{
+        --background: #0f08ef;
+    }
+    form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2){
+        filter:unset;
+    }
+}

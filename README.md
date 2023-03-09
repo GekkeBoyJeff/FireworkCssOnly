@@ -7,20 +7,31 @@ The assignment is to make a firework animation with only CSS. The animations sho
 [Firework show (gekkeboyjeff.github.io)](https://gekkeboyjeff.github.io/FireworkCssOnly/)
 
 ## Features
-- [ ] Responsive
-- [ ] Mobile friendly
-- [ ] Multiple fireworks at the same time
-- [ ] Animation triggered by checkboxes
+- [x] Responsive
+- [x] Mobile friendly
+- [x] Multiple fireworks at the same time
+- [x] Animation triggered by checkboxes
 - [ ] Animation triggered by hover
 - [ ] Animation triggered by touch (for the hover preview)
 - [ ] Animation triggered by focus
 
-## Bronnen
+![](assets/product.gif)
+
+## Epilogue
+I made less than I had hoped for. I took way to much time trying to figure out what and how I wanted to make it.  
+I learned a lot about the :has property
+I got stuck on trying to animate the first animation from the bottom properly. the other two divs do not start from the bottom for some reason.
+I couldn't make the animations I practiced on work in the end so they will remain in this readme forever. (sadface)
+
+I need to think less about what I want to make and just start. I think if I had made more time for the animations themselves I could have made much more.
+including the motion path which I wanted to try but I did not have enough time for it sadly.
+
+# weekly work
 
 ## Week 1 planning
 - [x] uittekenen hoe ik het ontwerp wil maken
 - [x] Een uitschuifbaar menu maken
-- [ ] Een werkende vuurpijl maken
+- [x] Een werkende vuurpijl maken
 
 This week it was my intention to make a basis for the assignment. Unfortunately, not everything worked out.
 
@@ -383,6 +394,196 @@ body div {
 
 As shown above, the animation-name has 2 properties now. the same goes for duration and delay so each animation has its sperate duration and starts at a different time.
 
- | Before | after |
- | ------ | ----- |
- |        |       |
+There was a bug in which the second animation starts without a delay once it has animated once.  I was not able to fix this sadly
+[Css chaining animation (codepen.io)](https://codepen.io/GekkeBoyJeff/pen/bGxNbBq)
+
+
+## Week 3
+This week was really stressfull since I haven't added any animations yet and it had to be delivered on this day.
+
+So I started by adding three divs to the third fieldset.
+```HTML
+<fieldset>
+	<div></div>
+	<div></div>
+	<div></div>
+</fieldset>
+```
+
+After that I added fake firework.
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, #ff0 .2em, #0000 0) 50% 00%,
+        radial-gradient(circle, #ff0 .3em, #0000 0) 00% 25%,
+        radial-gradient(circle, #ff0 .5em, #0000 0) 15% 45%,
+        radial-gradient(circle, #ff0 .2em, #0000 0) 95% 25%;
+    background-size: 0.2em 0.2em;
+    background-repeat: no-repeat;
+    animation: firework 2s infinite;
+    border-radius: .5em;
+}
+```
+
+The background property has a couple of different radial gradients which are the 'sparks' which come off the explosions. the value next to them are their positions within the div.
+
+In the animation I decided to change the width of the div itself. by doing this the radial gradients are able to hold their position within the div.
+
+```CSS
+@keyframes firework {
+    0% {
+        transform: translateY(60vh);
+        opacity: 0;
+    }
+  
+    50% {
+        width: 0.3em;
+        opacity: 1;
+    }
+  
+    100% {
+        width: 50dvw;
+        opacity: 0;
+    }
+}
+```
+
+![](w3Begin1stAnimation.png)
+
+The result was quite pleasing. After that I added a few more radial gradients.
+```CSS
+    background: radial-gradient(circle, #ff0 .2em, #0000 0) 50% 00%,
+        radial-gradient(circle, #ff0 .3em, #0000 0) 00% 25%,
+        radial-gradient(circle, #ff0 .5em, #0000 0) 15% 45%,
+        radial-gradient(circle, #ff0 .2em, #0000 0) 95% 45%,
+        radial-gradient(circle, #ff0 .3em, #0000 0) 5% 70%,
+        radial-gradient(circle, #ff0 .5em, #0000 0) 65% 85%,
+        radial-gradient(circle, #ff0 .2em, #0000 0) 25% 85%,
+        radial-gradient(circle, #ff0 .3em, #0000 0) 85% 65%,
+        radial-gradient(circle, #ff0 .5em, #0000 0) 75% 25%,
+        radial-gradient(circle, #ff0 .2em, #0000 0) 90% 15%;
+```
+
+Now to make the effect bigger and more spectecular I tried adding a before and after element to the selector.
+
+that was quite easy to do since I only had to copy and paste the current selector and add the before and after. I did however struggle with getting it to work but I completely forgot to add content to it...
+
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::after {
+    content: '';
+    }
+```
+
+And to make them a bit different I added another transform to the before and after element
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::before {
+    transform: translate(-50%, -50%) rotate(25deg) !important;
+}
+  
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::after {
+    transform: translate(-50%, -50%) rotate(-37deg) !important;
+}
+```
+
+I also had to add !important because I couldn't make the css more specific.
+
+After that I added custom properties so that I could change one of the properties of the hsl color.
+
+I gave the div a var called colorDeg which is different for the before and after effects. Because of this I was able to easily manipulate the colors of the before, after and other animations aswell
+
+```CSS
+    --colorDeg: 60deg;
+    --color: hsl(var(--colorDeg) 100% 50%);
+```
+
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::before {
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+    --colorDeg: 30deg;
+}
+
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div::after {
+    transform: translate(-50%, -50%) rotate(-27deg) !important;
+    --colorDeg: 10deg;
+}
+```
+
+I also changed the position of the other animations
+```CSS
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::after {
+    left: 20%;
+    bottom: 20%;
+    animation-delay: .5s;
+    --colorDeg: 80deg;
+    --color: hsl(var(
+    --colorDeg) 100% 50%);
+}
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3),
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::before,
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::after {
+    left: 80%;
+    top: 40%;
+    animation-delay: 1.2s;
+    --colorDeg: 20deg;
+    --color: hsl(var(
+    --colorDeg) 100% 50%);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+```
+
+I re-colored the menu, gave the background a color to simulate night and day. This depends on if you've got a black theme or white theme.
+
+I also added a sun and moon.
+
+```CSS
+@media (prefers-color-scheme: light){
+    body::before{
+        color:black;
+        content:"it's a bit light in here, isn't it?, try the dark mode";
+        position: absolute;
+        z-index: 0;
+        width: 100%;
+        text-align: center;
+        top: 1em;
+    }
+    body:after{
+        content:'';
+        position: absolute;
+        top: -1em;
+        right: -4em;
+        background:yellow;
+        box-shadow: 0 0 2em yellow;
+        width: 12em;
+        aspect-ratio:1;
+        border-radius: 50%;
+        z-index: -1;
+    }
+}
+```
+
+```CSS
+body:after{
+    content:'';
+    position: absolute;
+    top: -1em;
+    right: -4em;
+    background: #c9c9c9;
+    box-shadow: 0 0 2em #616161;
+    width: 12em;
+    aspect-ratio:1;
+    border-radius: 50%;
+    z-index: -1;
+}
+```
+
+
+
