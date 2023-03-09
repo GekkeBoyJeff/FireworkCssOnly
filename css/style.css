@@ -464,4 +464,14 @@ form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-o
         top: unset;
         bottom: 1em;
     }
+    form:has(> fieldset:first-of-type > input:nth-of-type(1):checked)>fieldset:nth-of-type(n+3) {
+        position: absolute;
+        height: 14em;
+        width: 8em;
+        right: 1em;
+        top: unset;
+        transform: translateY(0);
+        bottom: 1em;
+        z-index: 2;
+    }
 }
