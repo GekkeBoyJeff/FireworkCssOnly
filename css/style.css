@@ -73,12 +73,12 @@ body>form:first-of-type fieldset:first-of-type label:nth-of-type(n+2) {
     filter: brightness(4.5);
 }
 
-form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2) {
+form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2), form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(1) label:nth-of-type(3) {
     box-shadow: 0 0 0.5em 0 black inset;
     background: hsl(198deg 67% 54%);
 }
 
-body>form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:first-of-type label:nth-of-type(2)::before {
+body>form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:first-of-type label:nth-of-type(2)::before, body>form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:first-of-type label:nth-of-type(3)::before {
     content: '✅';
 }
 
@@ -498,7 +498,7 @@ form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-o
     body>form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type label:first-of-type::before, form>fieldset:nth-of-type(2)>label:first-of-type, body>form:first-of-type fieldset:first-of-type label:first-of-type::before{
         --background: #0f08ef;
     }
-    form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2){
+    form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2), form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(1) label:nth-of-type(3){
         filter:unset;
     }
 }
