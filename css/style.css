@@ -1,7 +1,6 @@
 :root{
-    
     --background: #040327;
---menuBackground: #1a191a;
+    --menuBackground: #1a191a;
 }
 
 * {
