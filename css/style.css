@@ -311,6 +311,7 @@ fieldset {
     position: relative;
     height: 0;
     height: 100dvh;
+    z-index: 1;
 }
 
 form>fieldset:nth-of-type(2) label:last-of-type {
@@ -531,6 +532,9 @@ form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-o
         z-index: 2;
         overflow: hidden;
     }
+    form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) > div{
+        transform: scale(0.7);
+    }
 }
 
 
@@ -548,5 +552,5 @@ form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-o
     }
     form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::before, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:first-of-type::after, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2), form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::before, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(2)::after, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3), form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::before, form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3)>div:nth-of-type(3)::after{
         animation:firework 6s infinite;
-    }
+    }       
 }
