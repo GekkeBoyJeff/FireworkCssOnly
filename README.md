@@ -383,3 +383,6 @@ body div {
 
 As shown above, the animation-name has 2 properties now. the same goes for duration and delay so each animation has its sperate duration and starts at a different time.
 
+ | Before | after |
+ | ------ | ----- |
+ |        |       |

@@ -47,6 +47,16 @@ body>form:first-of-type fieldset:first-of-type label {
     border-radius: .4em;
 }
 
+/* Changes width of the content once the menu has been folded open */
+form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:nth-of-type(n+3) {
+    width: 36.5em;
+    top: 90%;
+    height: 95%;
+    margin-top: 4em;
+    right: 1.5em;
+    border-radius: .5em;
+}
+
 /* Menu on the left folded open */
 form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type {
     transform: translateX(0px);
@@ -196,7 +206,7 @@ form:has(>fieldset:nth-of-type(2)>input:first-of-type:checked)>fieldset:nth-of-t
 
 /* flip first firework layer up */
 form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(3) {
-    transform: translateY(-104%);
+    transform: translateY(-100%);
     background-color: yellow;
 }
 
@@ -206,10 +216,10 @@ form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-o
 }
 
 form>fieldset:nth-of-type(n+3) {
-    opacity: .8;
+    opacity: .5;
 }
 
-form>fieldset:nth-of-type(n+4) {
+form>fieldset:nth-of-type(n+3) {
     position: absolute;
     width: 100vw;
     top: 100%;
