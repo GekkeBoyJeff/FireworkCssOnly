@@ -11,13 +11,12 @@ The assignment is to make a firework animation with only CSS. The animations sho
 - [x] Mobile friendly
 - [x] Multiple fireworks at the same time
 - [x] Animation triggered by checkboxes
-- [ ] Animation triggered by hover
-- [ ] Animation triggered by touch (for the hover preview)
+- [x] Animation triggered by hover
 - [ ] Animation triggered by focus
 
 ![](assets/product.gif)
 
-## Epilogue
+## Conclusion
 I made less than I had hoped for. I took way to much time trying to figure out what and how I wanted to make it.  
 I learned a lot about the :has property
 I got stuck on trying to animate the first animation from the bottom properly. the other two divs do not start from the bottom for some reason.
@@ -630,3 +629,13 @@ form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-o
 So the css path worked. However, it was still not readable so I had to adjust the height and width of the letters.
 
 Since the animations move I can't screenshot it.
+
+I did however add a reduced motion for the animations.
+```CSS
+@media (prefers-reduced-motion) {
+    form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) div div{
+        animation:move 2000ms infinite cubic-bezier(0.32, 0.28, 0.6, 0.71);
+    }
+}
+```
+
