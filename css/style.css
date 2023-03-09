@@ -56,6 +56,7 @@ body>form:first-of-type fieldset:first-of-type {
     align-content: start;
     transform: translateX(-25em);
     z-index: 2;
+    max-width:70%;
 }
 
 body>form:first-of-type fieldset:first-of-type label {
@@ -442,5 +443,11 @@ form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-o
     }
     form:has(> fieldset:first-of-type > input:nth-of-type(2):checked)>fieldset:nth-of-type(1) label:nth-of-type(2){
         filter:unset;
+    }
+}
+
+@media(max-width:400px){
+    form:has(> fieldset:first-of-type > input:first-of-type:checked)>fieldset:first-of-type>label:first-of-type{
+        left: 10em;
     }
 }
