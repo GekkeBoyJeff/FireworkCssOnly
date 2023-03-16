@@ -119,7 +119,7 @@ button{
 	background-color:(--button-color, red)
 	}
 
-A nice use case for this is adding a fallback in advance. Every list item has a standard delay of zero seconds unless the delay variable has been set.
+<!-- A nice use case for this is adding a fallback in advance. Every list item has a standard delay of zero seconds unless the delay variable has been set. -->
 
 li{
 	animation-delay:var(--delay, 0s)
