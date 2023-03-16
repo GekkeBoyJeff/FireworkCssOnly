@@ -113,8 +113,8 @@ button:hover{
 Above you can see that there are no variables defined in the root but rather in the components themselves. Sanne wanted to make it clear that it is also possible to update them within different components..
 
 ```CSS
-The fun fact about variables is that you can add a fallback to them if the color does not work
-
+<!-- The fun fact about variables is that you can add a fallback to them if the color does not work
+ -->
 button{
 	background-color:(--button-color, red)
 	}
