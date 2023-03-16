@@ -112,14 +112,12 @@ button:hover{
 
 Above you can see that there are no variables defined in the root but rather in the components themselves. Sanne wanted to make it clear that it is also possible to update them within different components..
 
+The fun fact about variables is that you can add a fallback to them if the color does not work
+
 ```CSS
-<!-- The fun fact about variables is that you can add a fallback to them if the color does not work
- -->
 button{
 	background-color:(--button-color, red)
-	}
-
-<!-- A nice use case for this is adding a fallback in advance. Every list item has a standard delay of zero seconds unless the delay variable has been set. -->
+}
 
 li{
 	animation-delay:var(--delay, 0s)
@@ -132,6 +130,7 @@ li:nth-of-type(3){
 	--delay:.5s;
 }
 ```
+A nice use case for this is adding a fallback in advance. Every list item has a standard delay of zero seconds unless the delay variable has been set.
 
 **Unitless custom properties**
 '``Lea verou' has an article coverin this. You want to do this for changing the animation based on how long something takes.
