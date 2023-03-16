@@ -14,7 +14,7 @@ The assignment is to make a firework animation with only CSS. The animations sho
 - [x] Animation triggered by hover
 - [ ] Animation triggered by focus
 
-![](assets/product.gif)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/product.gif)
 
 ## Conclusion
 I made less than I had hoped for. I took way to much time trying to figure out what and how I wanted to make it.  
@@ -451,7 +451,7 @@ In the animation I decided to change the width of the div itself. by doing this 
 }
 ```
 
-![](w3Begin1stAnimation.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w3Begin1stAnimation.png)
 
 The result was quite pleasing. After that I added a few more radial gradients.
 ```CSS
@@ -587,7 +587,7 @@ body:after{
 ## Animation 2
 While trying to make a motion path I wanted to animate it. I generated a svg with text on [this website)](https://danmarshall.github.io/google-font-to-svg-path/).  However while trying to animate it, the animation went wrong. 
 
-![](assets/offsetPath1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/offsetPath1.png)
 
 ```CSS
 form:has(> fieldset:first-of-type > input:nth-of-type(3):checked)>fieldset:nth-of-type(4) div {
