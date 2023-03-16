@@ -36,22 +36,22 @@ This week it was my intention to make a basis for the assignment. Unfortunately,
 
 ### Sketches:
 I started drawing out my menu which came out like this
-![](./assets/LayoutW1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/LayoutW1.png)
 
 I moestly designed the UI with this sketch. It occurred to me that I should have a form with a number of fieldsets. As indicated above, the foldable menus are the field sets.
 
 The basic HTML I was able to get out from my sketch for this week is as follows
-![](./assets/HtmlW1.png)The input fields in the middle (of the image above) are for sliding the field sets in and out.
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/HtmlW1.png)The input fields in the middle (of the image above) are for sliding the field sets in and out.
 
 ### Css
 For the base I have not yet taken into account the final styling because I still want to determine that.
-![](./assets/Css0W1.png)
-![](./assets/Css1W1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/Css0W1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/Css1W1.png)
 As shown above, you can press both labels to slide out the menus. The "buttons" in the menu on the left have not been further developed yet.
 
 ### Feedback week 1
 During the feedback conversation it came up that I used the has selector perfectly to make this. Below you see an image of the css selector in which I place the menu at the location on the left.
-![](../assets/Css2W1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/Css2W1.png)
 
 #### Takeaways
 - Continue with your assignment. Speed it up a bit because you don't have flares and explosions yet. 
@@ -148,13 +148,13 @@ So I thought of a different way in which I could place them in my HTML file to m
 So instead of placing them directly in the form. I placed them in the fieldset where they belonged. Then I positioned them with position relative. to give them a bit more of default 'responsiveness' which I tweaked a bit to my liking.
 
 However, I now had a button which said 'Menu left' 
-![](./assets/w2MenuLeftButton.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w2MenuLeftButton.png)
 which I did not like. I also wanted to change the text of the button when it was pressed but since I wasn't allowed to use javascript I had to think of a different way or option.
 
 It took me a while to figure out how to change the text but I found out I could change the text of 'content' which resides in the before and after tag. So I made this work.
 
-![](../assets/w2MenuLeftButtonAfter1.png)
-![](./assets/w2MenuLeftButtonAfter2.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w2MenuLeftButtonAfter1.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w2MenuLeftButtonAfter2.png)
 
 #### Positioning the left button
 ```CSS
@@ -243,7 +243,7 @@ However, getting the arrow at the bottom to look well was a big tougher. Since I
 The difference between the top-left button and the one on the bottom is that the one on the top-left is hiding it's button and actually shows it's ::before element which is also clickable. I made the button itself click-through with pointer-events:none;
 
 The button at the bottom simply has the same text-color as the background and has the bottom positioned with left:-.55em; to put it over the text. This however was not ideal since on mobile it would look like so:
-![](./assets/w3menuBottomButon.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w3menuBottomButon.png)
 
 It took me a while to figure out that it was better if I either made a ::before element of it or used order:-1; I did not know you could change the order of an element with a minus value. This was good to know.
 
@@ -363,7 +363,7 @@ body:hover div{
 ```
 
 The code above shows a single red block which splits into three blocks.
-![](./assets/w2SingleBlock.png) ![](../assets/w2TrippleBlock.png)
+![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w2SingleBlock.png) ![](https://raw.githubusercontent.com/GekkeBoyJeff/FireworkCssOnly/main/assets/w2TrippleBlock.png)
 
 So I tried to chain animations by placing a div around them which starts all the animations on hover. This however did not work fluently and felt wrong. After trying to make it work for a while a classmate told me I could simply place the other animation in the same css property and that I could add a delay for it aswell. 
 
